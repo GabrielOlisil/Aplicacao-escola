@@ -1,0 +1,36 @@
+create database bd_escolaUnificada;
+use bd_escolaUnificada;
+
+create table Escola (
+
+id_esc int primary key auto_increment,
+nome_fantasia_esc varchar(300) not null, 
+razao_social_esc varchar(300) not null,
+cnpj_esc varchar(300) not null,
+insc_estadual_esc varchar(300) not null,
+tipo_esc varchar(300) not null,
+data_criacao_esc date not null,
+responsavel_esc  varchar(300) not null,
+responsavel_telefone_esc varchar(300) not null,
+telefone_esc  varchar(300),
+email_esc  varchar(300),
+rua_esc varchar(300),
+bairro_esc varchar(300),
+numero_esc int,
+cep_esc varchar(300),
+compemento_esc varchar(300),
+cidade_esc varchar(300), 
+estado_esc varchar(300)
+);
+
+create table Curso (
+id_cur int primary key auto_increment,
+nome_cur varchar(300),
+carga_horaria_cur varchar(100),
+turno_cur varchar(100),
+descricao_cur varchar(300),
+id_esc_fk int,
+foreign key (id_esc_fk) references escola (id_esc)
+);
+
+

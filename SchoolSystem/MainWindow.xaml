@@ -1,0 +1,29 @@
+﻿<Window x:Class="SchoolSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SchoolSystem"
+        mc:Ignorable="d"
+        Title="Login" Height="768" Width="1280"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70px" />
+            <RowDefinition Height="*" />
+            
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Login" FontSize="50px" HorizontalAlignment="Center"/>
+
+        <StackPanel Grid.Row="1" Margin="200 0">
+            <Button x:Name="btCad" Margin="0,5" Height="100px" FontSize="70px" Click="btCad_Click" Cursor="Hand">Cadastro Escola</Button>
+            <Button x:Name="btList" Height="100px" FontSize="70px" Cursor="Hand" Content="Lista Escola" Click="btList_Click"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Margin="200 300 200 0 " >
+            <Button x:Name="btCad_Curso" Margin="0,5" Height="100px" FontSize="70px" Click="btCad_Curso_Click" Cursor="Hand">Cadastro Curso</Button>
+            <Button x:Name="btList_Curso" Height="100px" FontSize="70px" Cursor="Hand" Content="Lista Curso" Click="btList_Curso_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

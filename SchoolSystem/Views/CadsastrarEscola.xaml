@@ -1,0 +1,195 @@
+﻿<Window x:Class="SchoolSystem.Formulários.CadsastrarEscola"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SchoolSystem.Formulários"
+        mc:Ignorable="d"
+        Title="CadsastrarEscola" Height="768" Width="1280"
+        WindowStartupLocation="CenterScreen">
+        
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="210" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="70" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Cadastro de Escola"  FontSize="50" HorizontalAlignment="Center"/>
+
+
+
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <StackPanel Grid.Column="0" Margin="10,0">
+                <TextBlock Text="Informações" FontSize="30"/>
+                <Label Content="Nome Fantasia:" FontSize="25"/>
+
+                <TextBox x:Name="txtNomeFantasia" FontSize="20" VerticalContentAlignment="Center"  Height="40" BorderBrush="Black"/>
+
+                <Label Content="CNPJ:" FontSize="25"/>
+                <TextBox x:Name="txtCNPJ" FontSize="20" VerticalContentAlignment="Center" Height="40" BorderBrush="Black"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Margin="10,0">
+                <TextBlock Text="" FontSize="30" />
+                <Label Content="Razão social:" FontSize="25"/>
+                <TextBox x:Name="txtRazaoSocial" FontSize="20" VerticalContentAlignment="Center" Height="40" BorderBrush="Black" />
+                <Label Content="Inscição Estadual" FontSize="25"/>
+                <TextBox x:Name="txtInscEstadual" FontSize="20" VerticalContentAlignment="Center" Height="40" BorderBrush="Black" />
+
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="2">
+
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+
+            <StackPanel Grid.Column="0" Margin="5,0">
+                <TextBlock Text="Informações complementares:" FontSize="30" />
+                <Label Content="Tipo:" FontSize="25"/>
+
+                <StackPanel x:Name="rdTipo" Orientation="Horizontal" Height="40">
+                    <RadioButton x:Name="rdPublico" FontSize="25" GroupName="rdTipo" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="5,0" IsChecked="True" >Público</RadioButton>
+                    <RadioButton x:Name="rdPrivado" FontSize="25" GroupName="rdTipo" VerticalContentAlignment="Center" VerticalAlignment="Center" >Privado</RadioButton>
+
+                </StackPanel>
+                <Label Content="Data Criação:" FontSize="25"/>
+                <DatePicker x:Name="dtpDataCriacao" VerticalContentAlignment="Center" Height="40" FontSize="20"/>
+
+                <Label Content="Responsável:" FontSize="25"/>
+
+                <StackPanel Margin="5" Orientation="Horizontal" >
+                    <StackPanel Width="300" Margin="0,0,5,0" >
+                        <Label Content="Nome:" FontSize="25"/>
+                        <TextBox x:Name="txtnomeResponsavel" FontSize="20" VerticalContentAlignment="Center" Height="40" BorderBrush="Black" Cursor="Arrow" />
+
+                    </StackPanel>
+                    <StackPanel Width="300">
+                        <Label Content="Telefone:" FontSize="25"/>
+                        <TextBox x:Name="txtTelefoneResponsavel" FontSize="20" VerticalContentAlignment="Center" Height="40" BorderBrush="Black" />
+
+                    </StackPanel>
+                </StackPanel>
+
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Margin="5,0,5,5">
+                <TextBlock Text="Informações Email e Contato:" FontSize="30"/>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Width="300" Margin="0,0,5,0" >
+                        <Label Content="Telefone:" FontSize="25"/>
+                        <TextBox x:Name="txtTelefoneEscola" FontSize="20" VerticalContentAlignment="Center" Height="40" BorderBrush="Black" />
+
+                    </StackPanel>
+                    <StackPanel Width="300">
+                        <Label Content="Email:" FontSize="25"/>
+                        <TextBox x:Name="txtEmalescola" FontSize="20" VerticalContentAlignment="Center" Height="40" BorderBrush="Black" />
+
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Width="500" Margin="0,0,5,0" >
+                        <Label Content="Rua:" FontSize="25"/>
+                        <TextBox x:Name="txtRuaEsc" FontSize="20" VerticalContentAlignment="Center" Height="40" BorderBrush="Black" />
+
+                    </StackPanel>
+                    <StackPanel Width="100">
+                        <Label Content="Nº:" FontSize="25"/>
+                        <TextBox x:Name="txtNumRua" FontSize="20" Height="40" BorderBrush="Black" />
+
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Width="300" Margin="0,0,5,0" >
+                        <Label Content="Bairro:" FontSize="25"/>
+                        <TextBox x:Name="txtBairroEsc" FontSize="20" VerticalContentAlignment="Center" Height="40" BorderBrush="Black" />
+
+                    </StackPanel>
+                    <StackPanel Width="300">
+                        <Label Content="Complemento:" FontSize="25"/>
+                        <TextBox x:Name="txtComplementoEsc" FontSize="20" VerticalContentAlignment="Center" Height="40" BorderBrush="Black" />
+
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Width="196" Margin="0,0,6,0" >
+                        <Label Content="CEP:" FontSize="25"/>
+                        <TextBox x:Name="txtCepesc" FontSize="20" VerticalContentAlignment="Center" Height="40" BorderBrush="Black" />
+
+                    </StackPanel>
+                    <StackPanel Width="196" Margin="0,0,6,0">
+                        <Label Content="Cidade:" FontSize="25"/>
+                        <TextBox x:Name="txtCidadeEsc" FontSize="20" VerticalContentAlignment="Center" Height="40" BorderBrush="Black" />
+
+                    </StackPanel>
+                    <StackPanel Width="196">
+                        <Label Content="Estado:" FontSize="25"/>
+                        <ComboBox x:Name="cbEstado" Height="40" FontSize="20" VerticalContentAlignment="Center" BorderBrush="Black">
+                            <ComboBoxItem>Acre</ComboBoxItem>
+                            <ComboBoxItem>Alagoas</ComboBoxItem>
+                            <ComboBoxItem>Amapá</ComboBoxItem>
+                            <ComboBoxItem>Amazonas</ComboBoxItem>
+                            <ComboBoxItem>Bahia</ComboBoxItem>
+                            <ComboBoxItem>Ceará</ComboBoxItem>
+                            <ComboBoxItem>Distrito Federal</ComboBoxItem>
+                            <ComboBoxItem>Espírito Santo</ComboBoxItem>
+                            <ComboBoxItem>Goiás</ComboBoxItem>
+                            <ComboBoxItem>Maranhão</ComboBoxItem>
+                            <ComboBoxItem>Mato Grosso</ComboBoxItem>
+                            <ComboBoxItem>Mato Grosso do Sul</ComboBoxItem>
+                            <ComboBoxItem>Minas Gerais</ComboBoxItem>
+                            <ComboBoxItem>Pará</ComboBoxItem>
+                            <ComboBoxItem>Paraíba</ComboBoxItem>
+                            <ComboBoxItem>Paraná</ComboBoxItem>
+                            <ComboBoxItem>Pernambuco</ComboBoxItem>
+                            <ComboBoxItem>Piauí</ComboBoxItem>
+                            <ComboBoxItem>Rio de Janeiro</ComboBoxItem>
+                            <ComboBoxItem>Rio Grande do Norte</ComboBoxItem>
+                            <ComboBoxItem>Rio Grande do Sul</ComboBoxItem>
+                            <ComboBoxItem>Rondônia</ComboBoxItem>
+                            <ComboBoxItem>Roraima</ComboBoxItem>
+                            <ComboBoxItem>Santa Catarina</ComboBoxItem>
+                            <ComboBoxItem>São Paulo</ComboBoxItem>
+                            <ComboBoxItem>Sergipe</ComboBoxItem>
+                            <ComboBoxItem>Tocantins</ComboBoxItem>
+
+                        </ComboBox>
+
+                    </StackPanel>
+                </StackPanel>
+
+            </StackPanel>
+
+
+
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btSalvar" Grid.Column="1" Width="200" Height="50" Content="Salvar" FontSize="30" HorizontalAlignment="Right" Margin="50,0" Click="btSalvar_Click"/>
+
+
+        </Grid>
+
+    </Grid>
+</Window>

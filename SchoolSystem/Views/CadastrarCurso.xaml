@@ -1,0 +1,42 @@
+﻿<Window x:Class="SchoolSystem.Views.CadastrarCurso"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SchoolSystem.Views"
+        mc:Ignorable="d"
+        Title="CadastrarCurso" Height="768" Width="1280"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Cadastrar Curso" FontSize="50" HorizontalAlignment="Center"/>
+
+        <StackPanel Grid.Row="1" Margin="60 0" MaxWidth="500">
+            <Label Content="Nome:" FontSize="25"/>
+            <TextBox x:Name="txtNome" Cursor="Arrow" FontSize="20" VerticalContentAlignment="Center" Height="40" BorderBrush="Black" />
+            
+            <Label Content="Carga Horária:" FontSize="25"/>
+            <TextBox x:Name="txtCargaHoraria"  Cursor="Arrow" FontSize="20" VerticalContentAlignment="Center" Height="40" BorderBrush="Black" />
+
+            <StackPanel Orientation="Horizontal" >
+                <Label Content="Turno:" FontSize="25"/>
+                <ComboBox x:Name="cbTurno"  MinWidth="100" FontSize="20" Margin="10 0 0 0">
+                    <ComboBoxItem>Matutino</ComboBoxItem>
+                    <ComboBoxItem>Vespertino</ComboBoxItem>
+                    <ComboBoxItem>Noturno</ComboBoxItem>
+                </ComboBox>
+
+            </StackPanel>
+            
+            <Label Content="Descrição:" FontSize="25"/>
+            <TextBox x:Name="txtDescricao"  Cursor="Arrow" FontSize="20" VerticalContentAlignment="Center" Height="40" BorderBrush="Black" />
+        </StackPanel>
+
+        <Button Grid.Row="2" Content="salvar" x:Name="Button_Salvar" Click="Button_Salvar_Click" Cursor="Hand" FontSize="30" MaxWidth="400" MinHeight="60"/>
+    </Grid>
+</Window>
