@@ -18,10 +18,10 @@
 
         <StackPanel Grid.Row="1" Margin="60 0" MaxWidth="500">
             <Label Content="Nome:" FontSize="25"/>
-            <TextBox x:Name="txtNome" Cursor="Arrow" FontSize="20" VerticalContentAlignment="Center" Height="40" BorderBrush="Black" />
+            <TextBox x:Name="txtNome" Cursor="Arrow" FontSize="20" VerticalContentAlignment="Center" Height="40" />
             
             <Label Content="Carga Horária:" FontSize="25"/>
-            <TextBox x:Name="txtCargaHoraria"  Cursor="Arrow" FontSize="20" VerticalContentAlignment="Center" Height="40" BorderBrush="Black" />
+            <TextBox x:Name="txtCargaHoraria"  Cursor="Arrow" FontSize="20" VerticalContentAlignment="Center" Height="40"  />
 
             <StackPanel Orientation="Horizontal" >
                 <Label Content="Turno:" FontSize="25"/>
@@ -34,7 +34,10 @@
             </StackPanel>
             
             <Label Content="Descrição:" FontSize="25"/>
-            <TextBox x:Name="txtDescricao"  Cursor="Arrow" FontSize="20" VerticalContentAlignment="Center" Height="40" BorderBrush="Black" />
+            <TextBox x:Name="txtDescricao"  Cursor="Arrow" FontSize="20" VerticalContentAlignment="Center" Height="40"/>
+            <ComboBox x:Name="cbEscolas" FontSize="20" VerticalContentAlignment="Center" Height="40" DisplayMemberPath="NomeFantasia" SelectedValuePath="Id">
+                
+            </ComboBox>
         </StackPanel>
 
         <Button Grid.Row="2" Content="salvar" x:Name="Button_Salvar" Click="Button_Salvar_Click" Cursor="Hand" FontSize="30" MaxWidth="400" MinHeight="60"/>

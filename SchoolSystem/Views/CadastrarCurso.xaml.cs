@@ -25,12 +25,31 @@ namespace SchoolSystem.Views
         public CadastrarCurso()
         {
             InitializeComponent();
+            Loaded += CadastrarCurso_Loaded;
+
+
         }
         public CadastrarCurso(Curso curso)
         {
             InitializeComponent();
             _curso = curso;
             Loaded += CadastrarCurso_Loaded;
+            
+        }
+        private void CarregarListagemEscola()
+        {
+            try
+            {
+                var dao = new EscolaDAO();
+                List<Escola> listaDeEscolas = dao.List();
+
+                cbEscolas.ItemsSource = listaDeEscolas;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Falha na listagem", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
         }
 
         private void CadastrarCurso_Loaded(object sender, RoutedEventArgs e)
@@ -39,6 +58,8 @@ namespace SchoolSystem.Views
             txtDescricao.Text = _curso.Descricao;
             txtCargaHoraria.Text = _curso.CargaHoraria;
             txtNome.Text = _curso.Nome;
+            CarregarListagemEscola();
+
         }
 
         private void Button_Salvar_Click(object sender, RoutedEventArgs e)
@@ -47,6 +68,9 @@ namespace SchoolSystem.Views
             _curso.Descricao = txtDescricao.Text;
             _curso.CargaHoraria= txtCargaHoraria.Text;
             _curso.Nome = txtNome.Text;
+
+            if (cbEscolas.SelectedItem != null) _curso.Escola = cbEscolas.SelectedItem as Escola;
+            
 
             
 

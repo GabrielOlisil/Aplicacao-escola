@@ -6,58 +6,58 @@ using System.Data;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
-namespace SchoolSystem.Database
+namespace SchoolSystem.Database;
+
+class Conexao
 {
-    class Conexao
+    private static string host = "localhost";
+
+    private static string port = "3360";
+
+    private static string user = "root";
+
+    private static string password = "root";
+
+    private static string dbname = "bd_escolaunificada";
+
+    private static MySqlConnection connection;
+
+    private static MySqlCommand command;
+
+    public Conexao()
     {
-        private static string host = "localhost";
-
-        private static string port = "3306";
-
-        private static string user = "root";
-
-        private static string password = "root";
-
-        private static string dbname = "bd_escolaunificada";
-
-        private static MySqlConnection connection;
-
-        private static MySqlCommand command;
-
-        public Conexao()
+        try
         {
-            try
-            {
-                connection = new MySqlConnection($"server={host};database={dbname};port={port};user={user};password={password}");
-                connection.Open();
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
+            connection = new MySqlConnection($"server={host};database={dbname};port={port};user={user};password={password}");
+            connection.Open();
 
         }
-
-        public MySqlCommand Query()
+        catch (Exception)
         {
-            try
-            {
-                command = connection.CreateCommand();
-                command.CommandType = CommandType.Text;
-
-                return command;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            throw;
         }
 
-        public void Close()
+
+    }
+
+    public MySqlCommand Query()
+    {
+        try
         {
-            connection.Close();
+            command = connection.CreateCommand();
+            command.CommandType = CommandType.Text;
+
+            return command;
+        }
+        catch (Exception)
+        {
+            throw;
         }
     }
+
+    public void Close()
+    {
+        connection.Close();
+    }
+    
 }

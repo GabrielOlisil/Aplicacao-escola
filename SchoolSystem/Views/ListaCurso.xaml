@@ -24,6 +24,7 @@
                 <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" />
                 <DataGridTextColumn Header="Carga Horaria" Binding="{Binding CargaHoraria}" />
                 <DataGridTextColumn Header="Turno" Binding="{Binding Turno}" />
+                <DataGridTextColumn Header="Escola" Binding="{Binding Escola.NomeFantasia}" />
                 <DataGridTemplateColumn Header="Ações">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

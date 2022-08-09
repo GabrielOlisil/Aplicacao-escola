@@ -31,6 +31,10 @@ namespace SchoolSystem.Views
             CarregarListagem();
         }
 
+
+
+        
+
         private void CarregarListagem()
         {
             try

@@ -38,6 +38,15 @@ namespace SchoolSystem.Helpers
 
             return value;
         }
+        public static int GetId(MySqlDataReader reader, string column_name)
+        {
+            int value = 0;
+
+            if (!reader.IsDBNull(reader.GetOrdinal(column_name)))
+                value = reader.GetInt32(column_name);
+
+            return value;
+        }
 
         public static bool IsNull(MySqlDataReader reader, string column_name)
         {
