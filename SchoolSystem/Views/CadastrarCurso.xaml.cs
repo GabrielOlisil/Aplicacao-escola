@@ -58,6 +58,7 @@ namespace SchoolSystem.Views
             txtDescricao.Text = _curso.Descricao;
             txtCargaHoraria.Text = _curso.CargaHoraria;
             txtNome.Text = _curso.Nome;
+            cbEscolas.SelectedItem = _curso.Escola.Id;
             CarregarListagemEscola();
 
         }
